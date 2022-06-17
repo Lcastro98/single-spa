@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./style.css"
 
 export default function Root(props) {
 
@@ -21,14 +22,14 @@ export default function Root(props) {
   }, []);
 
   return (
-    <div className="App">
+    <div>
       <br></br>
       <br></br>
       <h1>Daily US Covid Data</h1>
 
-      <table>
+      <table className="justTable">
         <thead>
-          <tr>
+          <tr className='justTableHead'>
           <td>Date</td>
             <td>Positive</td>
             <td>Negative</td>
