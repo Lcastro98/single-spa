@@ -76,21 +76,27 @@
       position: fixed;
       top: 0;
       left: 0;
-      background-color: #111D4A;
-      color: white;
+      background-color: black;
+      color: black;
       font-size: 18px;
       font-weight: bold;
       width: 100%;
-      height: 75px;
+      height: 90px;
       display: flex;
       align-items: center;
     }
     
-    .navbar ul {
+    .navbar button {
       display: flex;
       align-items: center;
       list-style-type: none;
       height: 100%;
+      text-decoration: none;
+      padding: 10px;
+      font-weight: 600;
+      font-size: 20px;
+      color: black;
+      border-radius: 6px;
     }
     
     .navbar li {
@@ -98,27 +104,19 @@
       height: 100%;
     }
     
-    .navbar li:hover {
+    .navbar button:hover {
       opacity: 0.8;
     }
     
-    .navbar a {
-      text-decoration: none;
-      color: white;
-    }
     </style>
     <div class="navbar">
     <ul>
-      <a onclick="singleSpaNavigate('/react')">
-        <li>
-          React
-        </li>
-      </a>
-      <a onclick="singleSpaNavigate('/angular')">
-        <li>
-          Angular
-        </li>
-      </a>
+      <button onclick="singleSpaNavigate('/react')">
+        CovidData
+      </button>
+      <button onclick="singleSpaNavigate('/angular')">
+          PokeApi
+      </button>
     </ul>
     </div>
   <noscript>
