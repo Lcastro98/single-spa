@@ -11,7 +11,7 @@ export class PokemonsService {
   constructor(private http: HttpClient){ }
 
 
-  getCharacters(id:number){
+  getPokemons(id:number){
       return this.http.get<Pokemon>(`${this.baseUrl}/pokemon/${id}`)
       
   }
