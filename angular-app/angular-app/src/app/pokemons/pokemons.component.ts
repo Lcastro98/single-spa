@@ -4,11 +4,12 @@ import { Pokemon } from '../pokemon';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { PokemonsService } from '../pokemons.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemons',
   templateUrl: './pokemons.component.html',
-  styleUrls: ['./pokemons.component.css']
+  styleUrls: ['./pokemons.component.sass']
 })
 export class PokemonsComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'image'];
@@ -18,12 +19,15 @@ export class PokemonsComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: true })
   paginator!: MatPaginator;
-  constructor() { }
+  constructor(
+    private pokemonsService: PokemonsService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.getPokemons();
   }
-  getCharacters() {
+  getPokemons() {
     let character;
     range(1, 150).subscribe((id) =>
       this.pokemonsService.getPokemons(id).subscribe((res) => {
